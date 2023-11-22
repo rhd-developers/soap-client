@@ -58,7 +58,7 @@ class RecordIterator implements \SeekableIterator, \Countable
      * {@inheritdoc}
      * @return object
      */
-    public function current()
+    #[ReturnTypeWillChange] public function current()
     {
         return $this->current;
     }
@@ -99,7 +99,7 @@ class RecordIterator implements \SeekableIterator, \Countable
      *
      * @return int|null
      */
-    public function key()
+    #[ReturnTypeWillChange] public function key()
     {
         return $this->pointer;
     }
@@ -107,7 +107,7 @@ class RecordIterator implements \SeekableIterator, \Countable
     /**
      * {@inheritdoc}
      */
-    public function next()
+    #[ReturnTypeWillChange] public function next()
     {
         $this->pointer++;
     }
@@ -115,7 +115,7 @@ class RecordIterator implements \SeekableIterator, \Countable
     /**
      * {@inheritdoc}
      */
-    public function rewind()
+    #[ReturnTypeWillChange] public function rewind()
     {
         $this->pointer = 0;
     }
@@ -125,7 +125,7 @@ class RecordIterator implements \SeekableIterator, \Countable
      *
      * @return boolean
      */
-    public function valid()
+    #[ReturnTypeWillChange] public function valid()
     {
         return null != $this->getObjectAt($this->pointer);
     }
@@ -170,7 +170,7 @@ class RecordIterator implements \SeekableIterator, \Countable
      *
      * @return int
      */
-    public function count()
+    #[ReturnTypeWillChange]public function count()
     {
         return $this->queryResult->getSize();
     }
@@ -178,7 +178,7 @@ class RecordIterator implements \SeekableIterator, \Countable
     /**
      * @param int $position
      */
-    public function seek($position)
+    #[ReturnTypeWillChange] public function seek($position)
     {
         return $this->getObjectAt($position);
     }
